@@ -15,19 +15,21 @@ struct node
         for(int i=0;i<10;i++)
             next[i]=NULL;
     }
- 
 }*root;
  
 void insert_to_trie(string str)
 {
     node* curr=root;
     int len=str.size();
+
     for(int i=0;i<len;i++)
-    {   int label=str[i]-'0';
- 
+    {   
+		int label=str[i]-'0';
+
         if(curr->next[label]==NULL)
             curr->next[label]=new node;
-        curr=curr->next[label];
+       
+	    curr=curr->next[label];
     }
 }
  
@@ -56,16 +58,12 @@ void del(node* curr)
     {
         if(curr->next[i])
             del(curr->next[i]);
- 
     }
- 
     delete (curr);
 }
  
- 
 int main(void)
 {
- 
 	string phone_numbers[MAX];
 	string s;
 

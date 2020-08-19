@@ -78,5 +78,6 @@ int main(void)
             printf("%d\n",val);
         }
     }
-return 0;
+    
+    return 0;
 }
